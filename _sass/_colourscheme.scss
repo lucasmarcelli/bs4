@@ -1,0 +1,24 @@
+// some utility mixins
+
+@mixin auto-margins(){
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// background variables
+
+$background-colour: #E6FFFB;
+$background-colour-end: #8DF1E1;
+$background-accent: #FFC150;
+
+
+// some text colour stuff
+
+$link-colour: #2F69CC;
+$landing-text-color: #050D19;
+
+// button stuff
+
+$btn-content-colour: #FFF;
+$btn-content-bg: #276DA9;
+$btn-content-border: #E6FFFB;

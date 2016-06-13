@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "bootstrap";
 @import "colourscheme";
 
@@ -19,19 +20,19 @@ body{
 
 .container{
   @include make-container();
-  @include make-min(100vh);
-
+  min-height: 100vh;
   max-width: 100%;
+
 }
 
 .landing-project{
   @include make-row();
-  @include make-min(100vh);
+  min-height: 100vh;
 
   .project-header{
     @include make-row();
 
-    @include make-min(100vh);
+    min-height: 100vh;
     background: url('{{ site.baseurl }}/assets/img/landing/projects.jpg') no-repeat;
     background-size: cover;
     display:flex;
@@ -67,15 +68,16 @@ body{
 
   .active-projects{
     @include make-row();
-    @include make-min(100vh);
-    
+
+    min-height: 100vh;
+
   }
 
 }
 
 .landing-about{
   @include make-row();
-  @include make-min(100vh);
+  min-height: 100vh;
 
   p, h1{
     color: $landing-text-color;
@@ -90,17 +92,13 @@ body{
 
     .about-pic{
       @include make-row();
+      text-align: center;
 
       img{
-        @include make-col();
-        @include make-col-offset(3);
-        @include make-col-span(7);
+        max-height: 50vh;
+        min-height: 225px;
 
         border: 3px solid $background-accent;
-
-        @include media-breakpoint-up(lg){
-          margin-top: -2.5em;
-        }
 
       }
 
@@ -118,47 +116,33 @@ body{
 
 
   .retina-header{
-    margin-top: 2em;
     @include make-col();
-    @include make-col-offset(2);
-    @include make-col-span(10);
-    @include make-min(100vh);
+    @include make-col-span(12);
+    margin-top: 2em;
+    min-height: 100vh;
 
     .retina-header-text{
       margin-bottom: 1em;
     }
 
     .landing-cards{
+      @include make-row();
 
-      .card-text{
-        margin: .3335em;
+      .card-deck{
+        @include auto-margins();
 
       }
 
       .card{
         @include make-col();
         @include make-col-span(3);
-        @include auto-margins();
         min-width: 270px;
         max-width: 300px;
         width: 80%;
         height: 550px;
+        margin-left: 2em;
 
-        @include media-breakpoint-up(md){
-            width: 15em;
-            margin-left: .25em;
-            margin-right: .25em;
-        }
 
-        @include media-breakpoint-up(lg){
-            margin-left: .75em;
-            margin-right: .75em;
-            width: 15em;
-        }
-
-        .card-text{
-          margin-bottom: 2.3em;
-        }
 
         .btn{
           margin-left: .5em;
@@ -172,6 +156,10 @@ body{
           padding: 7px;
 
         }
+        .more{
+          width: 6em;
+
+        }
 
         .blog{
           @include make-col();
@@ -180,8 +168,12 @@ body{
           min-width: 30px;
         }
 
+        .card-text{
+          height: 10em;
+        }
 
         .card-img-top{
+          @include auto-margins();
           margin-top: 1em;
           width: 100%;
           height: 225px;
