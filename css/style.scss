@@ -130,17 +130,30 @@ body{
 
       .card-deck{
         @include auto-margins();
-
+        @include clearfix();
       }
 
       .card{
         @include make-col();
         @include make-col-span(3);
+        width: 80%;
         min-width: 270px;
         max-width: 300px;
-        width: 80%;
         height: 550px;
-        margin-left: 2em;
+
+
+
+        @include media-breakpoint-down(sm){
+          margin-left: 9em;
+        }
+
+        @include media-breakpoint-down(xs){
+          margin-left: 3em;
+        }
+
+        @include media-breakpoint-up(md){
+          margin-right: 2em;
+        }
 
 
 
