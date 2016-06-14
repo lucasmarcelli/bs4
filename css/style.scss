@@ -68,10 +68,13 @@ body{
 
   .active-projects, .non-active-projects{
     @include make-row();
+    @include clearfix();
 
     .list-group-item{
       @include clearfix();
       @include gradient-vertical-three-colors($background-colour-end, $background-colour-end-slightly, 50%, $background-colour-end);
+      padding-top: 1em;
+      padding-bottom: 1em;
       border: 2px solid $background-accent;
 
     }
@@ -80,15 +83,29 @@ body{
       @include make-col();
       @include make-col-offset(1);
       @include make-col-span(10);
-      height: 10em;
+      min-height: 10em;
 
       .active-title, .non-active-title{
+        text-align: center;
 
-        margin-top: 1em;
+        @include media-breakpoint-up(md){
+          text-align: left;
+        }
 
         .label{
-          font-size: 66%;
-          float: right;
+          font-size: 33%;
+          display: block;
+          width: 75%;
+          margin-top: .5em;
+          @include auto-margins();
+
+          @include media-breakpoint-up(md){
+            display: inline-block;
+            float: right;
+            font-size: 50%;
+            width: initial;
+            margin-top: 0;
+          }
         }
       }
     }
