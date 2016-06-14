@@ -41,6 +41,7 @@ body{
 
     .project-card{
 
+      @include auto-margins();
       background-color: hsla(0, 0%, 100%, 0.65);
 
       .card-title{
@@ -83,23 +84,28 @@ body{
       @include make-col();
       @include make-col-offset(1);
       @include make-col-span(10);
-      min-height: 10em;
+      min-height: 11em;
 
       .active-title, .non-active-title{
         text-align: center;
 
-        @include media-breakpoint-up(md){
+        @include media-breakpoint-up(lg){
           text-align: left;
         }
 
         .label{
-          font-size: 33%;
+          font-size: 40%;
           display: block;
-          width: 75%;
+          width: 70%;
           margin-top: .5em;
           @include auto-margins();
 
           @include media-breakpoint-up(md){
+            font-size: 50%;
+            width: 60%;
+          }
+
+          @include media-breakpoint-up(lg){
             display: inline-block;
             float: right;
             font-size: 50%;
@@ -177,23 +183,23 @@ body{
         @include make-col-span(3);
         width: 80%;
         min-width: 270px;
-        max-width: 300px;
+        max-width: 290px;
         height: 550px;
 
 
 
-        @include media-breakpoint-down(sm){
-          margin-left: 9em;
+        @media(max-width: 1000px){
+          margin-left: 28%;
         }
 
         @include media-breakpoint-down(xs){
-          margin-left: 3em;
+          margin-left: 15%;
         }
 
-        @include media-breakpoint-up(md){
-          margin-right: 2em;
+        @include media-breakpoint-up(lg){
+          margin-right: 1.5em;
+          margin-left: 0em;
         }
-
 
 
         .btn{
@@ -209,7 +215,7 @@ body{
 
         }
         .more{
-          width: 6em;
+          width: 7em;
 
         }
 
