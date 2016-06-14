@@ -18,6 +18,26 @@ body{
   @include button-variant($btn-content-colour, $btn-content-bg, $btn-content-border);
 }
 
+.btn-active{
+  @include button-variant($btn-active-colour, $btn-active-bg, $btn-active-border);
+}
+
+.label-active{
+  @include label-variant($active-colour);
+}
+
+.label-occasional{
+  @include label-variant($occasional-colour);
+}
+
+.label-completed{
+  @include label-variant($completed-colour);
+}
+
+.label-over{
+  @include label-variant($over-colour);
+}
+
 .container{
   @include make-container();
   min-height: 100vh;
@@ -42,7 +62,7 @@ body{
     .project-card{
 
       @include auto-margins();
-      background-color: hsla(0, 0%, 100%, 0.65);
+      background-color: hsla(0, 0%, 100%, 0.85);
 
       .card-title{
         font-size: 4em;
@@ -70,23 +90,28 @@ body{
   .active-projects, .non-active-projects{
     @include make-row();
     @include clearfix();
-    @include gradient-vertical-three-colors($background-colour-end, $background-colour-end-slightly, 50%, $background-colour-end);
-
+    @include gradient-vertical-three-colors($background-colour-end-slightly, $background-colour, 50%, $background-colour-end-slightly);
 
     .list-group-item{
       @include clearfix();
       padding-top: 1em;
       padding-bottom: 1em;
       border: 2px solid $background-accent;
+      border-bottom-width: 0em;
       background: none;
 
+    }
+
+    .last{
+      border-bottom-width: 2px;
     }
 
     .active-item, .non-active-item{
       @include make-col();
       @include make-col-offset(1);
       @include make-col-span(10);
-      min-height: 11em;
+      min-height: 12em;
+      margin-top: 1.33em;
 
       .active-title, .non-active-title{
         text-align: center;
@@ -143,8 +168,7 @@ body{
 
       img{
         max-height: 50vh;
-        min-height: 225px;
-
+        min-width: 250px;
         border: 3px solid $background-accent;
 
       }
