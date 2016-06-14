@@ -13,7 +13,7 @@ subtitle: "Sometimes I have a point."
               <div class="card-block">
                 <h4 class="card-title text-xs-center">Lucas Marcelli</h4>
                 <p class="card-text">An incredibly passionate coder who loves food, cats, space, etc. <br> Currently seeking employment as a full stack developer. </p>
-                  <div class="row">
+                  <div class="row btn-toolbar">
                     <a href="/assets/files/LucasMarcelli.pdf" target="_blank" class="btn btn-content resume">Résumé</a>
                     <a href="#about" class="btn btn-content more">Read More</a>
                   </div>
@@ -24,19 +24,19 @@ subtitle: "Sometimes I have a point."
               <div class="card-block">
                 <h4 class="card-title text-xs-center">My Projects</h4>
                 <p class="card-text">This is where sleep lives. It's a good collection of some active and past projects. Games and apps and things, check it out. </p>
-                  <div class="row">
+                  <div class="row btn-toolbar">
                     <a href="#project" class="btn btn-content project">Projects</a>
                     <a href="https://github.com/lucasmarcelli?tab=repositories" class="btn btn-content github">Github</a>
                   </div>
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="{{ site.baseurl }}/assets/img/landing/atom.png"alt="Dr. Jekyll and Mr. Hyde">
+              <img class="card-img-top" src="{{ site.baseurl }}/assets/img/landing/jekyll.png"alt="Dr. Jekyll and Mr. Hyde">
               <div class="card-block">
                 <h4 class="card-title text-xs-center">Blogosite</h4>
                 <p class="card-text">Powered by Jekyll, this is a collection of ideas and ramblings in the form of a blog. Makes up the bulk of this website's content. </p>
-                  <div class="row">
-                    <a href="#" class="btn btn-content blog">Go to Blog</a>
+                  <div class="row btn-toolbar">
+                    <a href="#" class="btn btn-content btn-block">Go to Blog</a>
                   </div>
               </div>
             </div>
@@ -66,7 +66,7 @@ subtitle: "Sometimes I have a point."
       <div class="card-block">
         <p class="card-title text-xs-center">Projects</h4>
         <p class="card-text text-xs-center"> Where my sleep lives.</p>
-        <div class="project-buttons">
+        <div class="project-buttons btn-toolbar">
           <a class="btn btn-active" href="#active">Active Projects</a>
           <a class="btn btn-secondary" href="#non-active">Non-Active Projects</a>
         </div>
@@ -83,6 +83,15 @@ subtitle: "Sometimes I have a point."
           <div class="active-blurb">
             <p>A personal project of mine with 200 registered users. It's a webapp to track mood changes and other indicators over time and identify problems. Tracking mood and living mindfully can really help mental health, even if you have no issues. </p>
           </div>
+          <div class="collapse" id="mood-extras">
+            {% capture mood %}{% include mood.markdown %}{% endcapture %}
+            {{ mood | markdownify }}
+          </div>
+          <div class="project-button-extras">
+            <a class="btn btn-active" data-toggle="collapse" href="#mood-extras">Show More</a>
+            <a class="btn btn-active" href="http://mood.marcelli.ca" target="_blank">Visit Mood</a>
+            <a class="btn btn-active" href="https://github.com/lucasmarcelli/mood-tracker" target="_blank">Github Repo</a>
+          </div>
         </div>
       </li>
       <li class="list-group-item">
@@ -91,8 +100,10 @@ subtitle: "Sometimes I have a point."
             <h1>This Website<span class="label label-active">Active Development</span></h1>
           </div>
           <div class="active-blurb">
-            <p>I use marcelli.ca as my staging ground and sandbox. When new technologies come out, especially for front end, I try them here first and then write about it. This is all hosted on github pages via Jekyll, meaning I have free simple hosting as long as I don't need dynamic content. </p>
+            <p>I use marcelli.ca as my staging ground and sandbox. When new technologies come out, especially for front end, I try them here first and then write about it. This is all hosted on github pages via Jekyll, meaning I have free simple hosting as long as I don't need dynamic content. Also where my blog lives.</p>
           </div>
+          <div class="project-button-extras">
+            <a class="btn btn-active" ref="#blog">Blog</a>
         </div>
       </li>
       <li class="list-group-item">
