@@ -66,10 +66,32 @@ body{
 
   }
 
-  .active-projects{
+  .active-projects, .non-active-projects{
     @include make-row();
 
-    min-height: 100vh;
+    .list-group-item{
+      @include clearfix();
+      @include gradient-vertical-three-colors($background-colour-end, $background-colour-end-slightly, 50%, $background-colour-end);
+      border: 2px solid $background-accent;
+
+    }
+
+    .active-item, .non-active-item{
+      @include make-col();
+      @include make-col-offset(1);
+      @include make-col-span(10);
+      height: 10em;
+
+      .active-title, .non-active-title{
+
+        margin-top: 1em;
+
+        .label{
+          font-size: 66%;
+          float: right;
+        }
+      }
+    }
 
   }
 
