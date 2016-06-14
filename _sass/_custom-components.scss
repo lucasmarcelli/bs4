@@ -1,0 +1,28 @@
+
+//custom buttton variants
+
+.btn-content{
+  @include button-variant($btn-content-colour, $btn-content-bg, $btn-content-border);
+}
+
+.btn-active{
+  @include button-variant($btn-active-colour, $btn-active-bg, $btn-active-border);
+}
+
+//custom label variants
+
+.label-active{
+  @include label-variant($active-colour);
+}
+
+.label-occasional{
+  @include label-variant($occasional-colour);
+}
+
+.label-completed{
+  @include label-variant($completed-colour);
+}
+
+.label-over{
+  @include label-variant($over-colour);
+}
