@@ -87,12 +87,19 @@ body{
       min-height: 11em;
 
       .project-button-extras{
+
+        .btn{
+          margin-right: 1em;
+          min-width: 7.5em;
+        }
+
         @include media-breakpoint-down(sm){
           text-align: center;
 
           .btn{
               width: 75%;
               margin-top: .4em;
+              margin-right: 0em;
             }
           }
       }
