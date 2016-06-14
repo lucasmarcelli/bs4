@@ -70,13 +70,15 @@ body{
   .active-projects, .non-active-projects{
     @include make-row();
     @include clearfix();
+    @include gradient-vertical-three-colors($background-colour-end, $background-colour-end-slightly, 50%, $background-colour-end);
+
 
     .list-group-item{
       @include clearfix();
-      @include gradient-vertical-three-colors($background-colour-end, $background-colour-end-slightly, 50%, $background-colour-end);
       padding-top: 1em;
       padding-bottom: 1em;
       border: 2px solid $background-accent;
+      background: none;
 
     }
 
