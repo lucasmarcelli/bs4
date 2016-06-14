@@ -66,6 +66,13 @@ body{
     @include clearfix();
     @include gradient-vertical-three-colors($background-colour-end-slightly, $background-colour, 50%, $background-colour-end-slightly);
 
+    .collapse{
+      img{
+        display: block;
+        @include auto-margins();
+      }
+
+    }
     .list-group-item{
       @include clearfix();
       padding-top: 1em;
