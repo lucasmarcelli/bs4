@@ -31,7 +31,7 @@ subtitle: "Sometimes I have a point."
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="{{ site.baseurl }}/assets/img/landing/atom.png"alt="Dr. Jekyll and Mr. Hyde">
+              <img class="card-img-top" src="{{ site.baseurl }}/assets/img/landing/jekyll.png"alt="Dr. Jekyll and Mr. Hyde">
               <div class="card-block">
                 <h4 class="card-title text-xs-center">Blogosite</h4>
                 <p class="card-text">Powered by Jekyll, this is a collection of ideas and ramblings in the form of a blog. Makes up the bulk of this website's content. </p>
@@ -82,6 +82,15 @@ subtitle: "Sometimes I have a point."
           </div>
           <div class="active-blurb">
             <p>A personal project of mine with 200 registered users. It's a webapp to track mood changes and other indicators over time and identify problems. Tracking mood and living mindfully can really help mental health, even if you have no issues. </p>
+          </div>
+          <div class="collapse" id="mood-extras">
+            {% capture mood %}{% include mood.markdown %}{% endcapture %}
+            {{ mood | markdownify }}
+          </div>
+          <div class="project-button-extras">
+            <a class="btn btn-active" data-toggle="collapse" href="#mood-extras">Show More</a>
+            <a class="btn btn-active" href="http://mood.marcelli.ca" target="_blank">Visit Mood</a>
+            <a class="btn btn-active" href="https://github.com/lucasmarcelli/mood-tracker" target="_blank">Code on Github</a>
           </div>
         </div>
       </li>
