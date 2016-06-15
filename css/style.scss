@@ -167,8 +167,15 @@ body{
     margin-top: 2em;
     margin-bottom: 2em;
 
+    .about-body{
+      margin-top: 1.25em;
+      margin-bottom: .75em;
+
+    }
+
     .about-pic{
       @include make-row();
+      margin-top: 1.8em;
       text-align: center;
 
       img{
@@ -213,7 +220,7 @@ body{
         @include make-col();
         @include make-col-span(3);
         width: 290px;
-        height: 550px;
+        height: 525px;
 
 
 
@@ -247,6 +254,7 @@ body{
 
         .card-text{
           height: 10em;
+          margin-bottom: 0em;
 
         }
 
