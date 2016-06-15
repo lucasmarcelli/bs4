@@ -11,18 +11,24 @@
 
 //custom label variants
 
+@mixin less-opacity-label($colour){
+  @include label-variant(rgba($colour, 0.66));
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+}
+
 .label-active{
-  @include label-variant($active-colour);
+  @include less-opacity-label($active-colour);
 }
 
 .label-occasional{
-  @include label-variant($occasional-colour);
+  @include less-opacity-label($occasional-colour);
 }
 
 .label-completed{
-  @include label-variant($completed-colour);
+  @include less-opacity-label($completed-colour);
 }
 
 .label-over{
-  @include label-variant($over-colour);
+  @include less-opacity-label($over-colour);
 }
