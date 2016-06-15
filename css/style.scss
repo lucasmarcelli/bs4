@@ -194,8 +194,15 @@ body{
 .upper-retina{
   @include make-row();
 
-  background: url('{{ site.baseurl }}/assets/img/landing/background.jpg') no-repeat;
+  background: url('{{ site.baseurl }}/assets/img/landing/background-mobile.jpg') no-repeat;
+
+  @include media-breakpoint-up(md){
+    background: url('{{ site.baseurl }}/assets/img/landing/background.jpg') no-repeat;
+  }
+
   background-size: cover;
+
+
 
 
   .retina-header{
