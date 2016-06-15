@@ -4,6 +4,7 @@
 @import "bootstrap";
 @import "colourscheme";
 @import "custom-components";
+@import "syntax";
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -70,13 +71,14 @@ body{
       img{
         display: block;
         @include auto-margins();
+        max-width: 100%;
       }
 
     }
     .list-group-item{
       @include clearfix();
-      padding-top: 1em;
-      padding-bottom: 1em;
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
       border: 2px solid $background-accent;
       border-bottom-width: 0em;
       background: none;
@@ -123,7 +125,7 @@ body{
           font-size: 40%;
           display: block;
           width: 70%;
-          margin-top: .5em;
+          margin-top: .4em;
           @include auto-margins();
 
           @include media-breakpoint-up(md){
@@ -138,6 +140,11 @@ body{
             width: initial;
           }
         }
+      }
+
+      .active-blurb, .non-active-blurb{
+        margin-top: .4em;
+        margin-bottom: 1.4em;
       }
     }
 
