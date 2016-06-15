@@ -6,6 +6,7 @@
 @import "custom-components";
 @import "syntax";
 
+
 body{
   font-family: 'Open Sans', sans-serif;
   @include gradient-vertical($background-colour, $background-colour-end, 0%, 100%);
@@ -147,10 +148,9 @@ body{
         margin-bottom: 1.4em;
       }
     }
-
   }
-
 }
+
 
 .landing-about{
   @include make-row();
@@ -247,6 +247,7 @@ body{
 
         .card-text{
           height: 10em;
+
         }
 
         .card-img-top{
@@ -257,7 +258,6 @@ body{
 
         }
       }
-
     }
   }
 }
