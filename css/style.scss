@@ -190,20 +190,16 @@ body{
   }
 
 }
-
 .upper-retina{
   @include make-row();
 
   background: url('{{ site.baseurl }}/assets/img/landing/background-mobile.jpg') no-repeat;
+  background-size: cover;
 
   @include media-breakpoint-up(md){
     background: url('{{ site.baseurl }}/assets/img/landing/background.jpg') no-repeat;
+    background-size: cover;
   }
-
-  background-size: cover;
-
-
-
 
   .retina-header{
     @include make-col();
@@ -265,12 +261,16 @@ body{
 
         }
 
-        .card-img-top{
-          @include auto-margins();
-          margin-top: 1em;
-          width: 100%;
-          height: 225px;
+        .card-image{
+          text-align: center;
 
+          .card-img-top{
+
+            width: 250px;
+            margin-top: 1em;
+            height: 225px;
+
+          }
         }
       }
     }
