@@ -1,5 +1,5 @@
 
-//custom buttton variants
+/*custom buttton variants*/
 
 .btn-content{
   @include button-variant($btn-content-colour, $btn-content-bg, $btn-content-border);
@@ -9,7 +9,7 @@
   @include button-variant($btn-active-colour, $btn-active-bg, $btn-active-border);
 }
 
-//custom label variants
+/*custom label variants*/
 
 @mixin less-opacity-label($colour){
   @include label-variant(rgba($colour, 0.66));
@@ -31,4 +31,14 @@
 
 .label-over{
   @include less-opacity-label($over-colour);
+}
+
+/*custom card variants*/
+.content-card{
+  @include card-variant($active-colour, $occasional-colour);
+  @include auto-margins();
+  min-height: 90vh;
+  margin-top: 3em;
+  width: 70%;
+
 }

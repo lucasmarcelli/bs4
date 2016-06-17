@@ -15,6 +15,10 @@ body{
     color: $link-colour;
   }
 
+  ul{
+    list-style: none;
+  }
+
 }
 
 .container{
@@ -24,9 +28,70 @@ body{
 
 }
 
+hr{
+  width: 88%;
+  background-color: $border-accent;
+}
+
+.previous{
+  float: left;
+}
+
+.next{
+  float: right;
+}
+
+.img-text{
+  text-align: center;
+
+  img{
+    display: block;
+    @include auto-margins();
+  }
+}
+
+.post{
+  padding-left: 1.75em;
+  padding-right: 1.5em;
+}
+
+.blog-header, .post-header{
+  margin-top: .25em;
+  margin-bottom: 1.33em;
+}
+
+.post-list{
+  padding-left: 0em;
+}
+
+.first{
+  border-top: 1px solid $border-accent;
+}
+
+.post-list-item{
+  border-bottom: 1px solid $border-accent;
+
+  a{
+    color: inherit;
+  }
+
+  a:hover{
+    text-decoration: none;
+
+    .card-block{
+      background-color: $post-list-hover;
+
+    }
+  }
+
+  .text-muted{
+    color: #CAFAF3;
+    padding-top: 0em;
+  }
+}
+
 .landing-project{
   @include make-row();
-  min-height: 100vh;
 
   .project-header{
     @include make-row();
@@ -224,6 +289,10 @@ body{
         @include make-col-span(3);
         width: 290px;
         height: 525px;
+
+        .latest-post-indicator{
+          text-align: center;
+        }
 
 
 
