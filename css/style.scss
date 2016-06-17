@@ -29,7 +29,7 @@ body{
 }
 
 hr{
-  width: 88%;
+  width: 94%;
   background-color: $border-accent;
 }
 
@@ -47,6 +47,9 @@ hr{
   img{
     display: block;
     @include auto-margins();
+    max-width: 100%;
+    max-height: 95vh;
+    margin-bottom: .75em;
   }
 }
 
@@ -288,7 +291,7 @@ hr{
         @include make-col();
         @include make-col-span(3);
         width: 290px;
-        height: 525px;
+        height: 530px;
 
         .latest-post-indicator{
           text-align: center;

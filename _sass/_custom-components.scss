@@ -39,6 +39,10 @@
   @include auto-margins();
   min-height: 90vh;
   margin-top: 3em;
-  width: 70%;
+  width: 100%;
+
+  @include media-breakpoint-up(lg){
+    width: 70%;
+  }
 
 }
