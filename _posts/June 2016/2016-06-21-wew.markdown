@@ -1,0 +1,27 @@
+---
+layout: post
+title: "New Job, New City, New Layout."
+subtitle: "Adventure is out there!"
+---
+
+A little while ago I noticed that [Bootstrap v4](http://v4-alpha.getbootstrap.com/) was in late alpha. I took a look at my blog and thought:
+
+*I could do better.*
+
+So here we are! My all new layout. The [landing page]({{ site.baseurl }}/) is basically a showcase of my projects and stuff, while the blog lives in this corner of the site. The idea here is to give the casual visitor an overview of me, and anyone who wants to read more can do so.
+
+I sat down and started learning about v4. I really like it! It's 100% SASS now, no LESS, which means I can use the mixins that bootstrap uses freely. My favourite use so far has been custom buttons and labels like this:
+
+{% highlight scss %}
+  .btn-content {
+    @include button-variant($btn-content-colour, $btn-content-bg, $btn-content-border);
+  }
+{% endhighlight %}
+
+Another thing I love is the replacement for bootstrap panels, called Cards. They are very, very nice tools and it's worth switching to bootstrap 4 just to be able to use them in full.
+
+I've been studying design in my free time, and it's really starting to show. I really am enjoying rounding out my development abilities like this. Speaking of free time, I'm soon to have a lot less because I finally got a job! In Toronto!
+
+A marketing company called Montana Steele has hired me as a Web Developer to build and maintain client websites. In addition to that, I'll be helping to migrate the stack from a PHP based one to something more MVC. It's going to be a challenge but a lot of fun at the same time, I love designing from the ground up and it's exciting to be only the second person on the team doing the design!
+
+I'm really excited to start on June 27th. Job searches are absolutely soul crushing but in the end you will find something that is a mutual fit.
