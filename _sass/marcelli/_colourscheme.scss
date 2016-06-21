@@ -1,14 +1,9 @@
-// some utility mixins
-@mixin auto-margins() {
-  margin-left: auto;
-  margin-right: auto;
-}
 // background variables
-$background-colour: #B6F6EC;
-$background-colour-end: #8DF1E1;
-$background-colour-end-slightly: #CAFAF3;
+$background-colour: #FFF;
+$background-colour-end: #E6FFFC;
+$background-colour-end-slightly: #EBFEFB;
 $background-accent: #FFC150;
-$border-accent: $background-colour;
+$border-accent: #B6F6EC;
 $post-list-hover: #FFBF52;
 $content-background: #17C17A;
 $content-background-slight: #52DEA7;
@@ -16,17 +11,17 @@ $content-background-slight: #52DEA7;
 $link-colour: #F25D0D;
 $landing-text-color: #050D19;
 // palette tingz
-$active-colour: #16d082;
+$active-colour: #0DD987;
 $occasional-colour: #71c171;
-$completed-colour: $link-colour;
+$completed-colour: #F25D0D;
 $over-colour: #d1332e;
 // button stuff
 $btn-content-colour: #FFF;
 $btn-content-bg: #30A6B1;
 $btn-content-border: #E6FFFB;
-$btn-active-bg: $active-colour;
+$btn-active-bg: #16d082;
 $btn-active-colour: #FFF;
-$btn-active-border: $active-colour;
+$btn-active-border: #16d082;
 //navbar
 $nav-background-colour: #140605;
-$nav-item-colour: $background-colour-end-slightly;
+$nav-item-colour: #CAFAF3;

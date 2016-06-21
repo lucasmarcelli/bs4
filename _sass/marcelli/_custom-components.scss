@@ -9,7 +9,7 @@
 
 //*custom label variants*/
 @mixin less-opacity-label($colour) {
-  @include label-variant(rgba($colour, 0.66));
+  @include label-variant(rgba($colour, 0.88));
   padding-left: 0.625em;
   padding-right: 0.625em;
 }
