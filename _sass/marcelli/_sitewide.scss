@@ -1,0 +1,25 @@
+body {
+  @include gradient-vertical($background-colour, $background-colour-end, 0%, 100%);
+  font-family: "Open Sans", sans-serif;
+
+  a {
+    color: $link-colour;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+}
+
+.container {
+  @include make-container();
+  max-width: 100%;
+  min-height: 100vh;
+
+}
+
+hr {
+  background-color: $border-accent;
+  width: 94%;
+}

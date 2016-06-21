@@ -1,0 +1,110 @@
+.landing-project {
+  @include make-row();
+
+  .project-card {
+    @include auto-margins();
+    background-color: hsla(0, 0%, 100%, 0.85);
+
+    .card-title {
+      font-size: 4em;
+    }
+
+    .card-text {
+      font-size: 2em;
+    }
+  }
+
+  .project-buttons {
+    @include auto-margins();
+    @include clearfix();
+  }
+}
+
+.active-projects,
+.non-active-projects {
+  @include make-row();
+  @include clearfix();
+  @include gradient-vertical-three-colors($background-colour-end-slightly, $background-colour, 50%, $background-colour-end-slightly);
+
+  .collapse {
+    img {
+      display: block;
+      @include auto-margins();
+      max-width: 100%;
+    }
+  }
+
+  .list-group-item {
+    @include clearfix();
+    background: none;
+    border: 0.125em solid $background-accent;
+    border-bottom-width: 0;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+
+    }
+
+  .last {
+    border-bottom-width: 0.125em;
+  }
+
+  .active-item,
+  .non-active-item {
+    @include make-col();
+    @include make-col-offset(1);
+    @include make-col-span(10);
+    min-height: 11em;
+
+    .project-button-extras {
+      .btn {
+        margin-right: 1em;
+        min-width: 7.5em;
+      }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+
+        .btn {
+          margin-right: 0;
+          margin-top: 0.4em;
+          width: 75%;
+
+        }
+      }
+    }
+
+    .active-title,
+    .non-active-title {
+      margin-bottom: 1.25em;
+      text-align: center;
+      @include media-breakpoint-up(lg) {
+        text-align: left;
+      }
+
+      .label {
+        display: block;
+        font-size: 40%;
+        margin-top: 0.4em;
+        width: 70%;
+        @include auto-margins();
+        @include media-breakpoint-up(md) {
+          font-size: 50%;
+          width: 45%;
+        }
+
+        @include media-breakpoint-up(lg) {
+          display: inline-block;
+          float: right;
+          font-size: 50%;
+          width: initial;
+        }
+      }
+    }
+
+    .active-blurb,
+    .non-active-blurb {
+      margin-bottom: 1.4em;
+      margin-top: 0.4em;
+    }
+  }
+}

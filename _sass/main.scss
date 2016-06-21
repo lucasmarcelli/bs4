@@ -1,0 +1,15 @@
+
+//Variables
+@import "marcelli/colourscheme";
+//Now bootstrap
+@import "bootstrap/bootstrap";
+//Now some custom styles
+@import "marcelli/sitewide";
+@import "marcelli/landing-project";
+@import "marcelli/landing-about";
+@import "marcelli/landing-header";
+@import "marcelli/blog";
+//now syntax
+@import "marcelli/syntax";
+//now custom components
+@import "marcelli/custom-components"

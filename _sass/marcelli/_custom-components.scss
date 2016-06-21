@@ -1,0 +1,43 @@
+//custom buttton variants*/
+.btn-content {
+  @include button-variant($btn-content-colour, $btn-content-bg, $btn-content-border);
+}
+
+.btn-active {
+  @include button-variant($btn-active-colour, $btn-active-bg, $btn-active-border);
+}
+
+//*custom label variants*/
+@mixin less-opacity-label($colour) {
+  @include label-variant(rgba($colour, 0.66));
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+}
+
+.label-active {
+  @include less-opacity-label($active-colour);
+}
+
+.label-occasional {
+  @include less-opacity-label($occasional-colour);
+}
+
+.label-completed {
+  @include less-opacity-label($completed-colour);
+}
+
+.label-over {
+  @include less-opacity-label($over-colour);
+}
+
+//*custom card variants*/
+.content-card {
+  @include card-variant($active-colour, $occasional-colour);
+  @include auto-margins();
+  margin-top: 3em;
+  min-height: 90vh;
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    width: 70%;
+  }
+}
