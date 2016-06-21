@@ -8,8 +8,9 @@
   background-color: $nav-background-colour;
   border-radius: 0;
   height: inherit;
-  position: fixed;
-  width: 100%;
-  z-index: 3;
 
+}
+
+.nav-link {
+  color: $nav-item-colour;
 }

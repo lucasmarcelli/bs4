@@ -1,5 +1,5 @@
 <ul class="list-group active-project-list">
-    <li class="list-group-item">
+    <li class="list-group-item" id="mood">
         <div class="active-item">
             <div class="active-title">
                 <h1>Mood Tracker<span class="label label-active">Active Development</span></h1>
@@ -12,7 +12,7 @@
                 {% capture mood %}{% include markdown/mood.markdown %}{% endcapture %} {{ mood | markdownify }}
             </div>
             <div class="project-button-extras">
-                <a class="btn btn-content" data-toggle="collapse" href="#mood-extras">Show More</a>
+                <a class="btn btn-content show-more" data-toggle="collapse" href="#mood-extras">Show More</a>
                 <a class="btn btn-content" href="http://mood.marcelli.ca" target="_blank">Visit Mood</a>
                 <a class="btn btn-content" href="https://github.com/lucasmarcelli/mood-tracker" target="_blank">Github Repo</a>
             </div>
