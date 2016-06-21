@@ -2,4 +2,7 @@
 layout: post
 ---
 
+{% capture old %}{% include markdown/old-post.markdown %}{% endcapture %}
+{{ old | markdownify }}
+
 {{ content }}

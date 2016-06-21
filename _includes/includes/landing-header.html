@@ -39,7 +39,7 @@
                     </div>
                     <div class="row latest-post-indicator">
                         {% for post in site.posts limit:1 %}
-                        <small>Last post: {{ post.date | date: '%B %d, %Y' }}</small> {% endfor %}
+                        <small>Latest post: {{ post.date | date: '%B %d, %Y' }}</small> {% endfor %}
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                     </p>
             </div>
             <div class="collapse" id="mood-extras">
-                {% capture mood %}{% include mood.markdown %}{% endcapture %} {{ mood | markdownify }}
+                {% capture mood %}{% include markdown/mood.markdown %}{% endcapture %} {{ mood | markdownify }}
             </div>
             <div class="project-button-extras">
                 <a class="btn btn-content" data-toggle="collapse" href="#mood-extras">Show More</a>
