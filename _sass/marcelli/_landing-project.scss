@@ -20,6 +20,19 @@
   }
 }
 
+.carousel {
+  margin-bottom: 1.5rem;
+}
+
+.carousel-item {
+  height: 95vh;
+
+  img {
+    max-height: 90vh;
+    max-width: 90%;
+  }
+}
+
 .active-projects,
 .non-active-projects {
   @include make-row();
@@ -85,11 +98,11 @@
         display: block;
         font-size: 40%;
         margin-top: 0.4em;
-        width: 70%;
+        width: 80%;
         @include auto-margins();
         @include media-breakpoint-up(md) {
           font-size: 50%;
-          width: 45%;
+          width: 55%;
         }
 
         @include media-breakpoint-up(lg) {

@@ -1,0 +1,21 @@
+<div id="art" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img src="{{ site.baseurl }}/assets/img/colouring/1.jpg" alt="First slide">
+    </div>
+    {% for i in page.colouring %}
+    <div class="carousel-item">
+      <img src="{{ site.baseurl }}/assets/img/colouring/{{ i }}.jpg" alt="First slide">
+    </div>
+    {% endfor %}
+  </div>
+  <a class="left carousel-control" href="#art" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#art" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
