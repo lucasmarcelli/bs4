@@ -97,7 +97,7 @@
       .label {
         display: block;
         font-size: 40%;
-        margin-top: 0.4em;
+        padding-top: 0.4rem;
         width: 80%;
         @include auto-margins();
         @include media-breakpoint-up(md) {
