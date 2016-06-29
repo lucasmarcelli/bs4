@@ -31,6 +31,25 @@
             </div>
         </div>
     </li>
+    <li class="list-group-item" id="mood">
+        <div class="non-active-item">
+            <div class="non-active-title">
+                <h1>Mood Tracker<span class="label label-completed">On Hold 🙌</span></h1>
+            </div>
+            <div class="non-active-blurb">
+                <p>A personal project of mine with 200 registered users. It's a webapp to track mood changes and other indicators over time and identify problems. Tracking mood and living mindfully can really help mental health, even if you have no issues.
+                    </p>
+            </div>
+            <div class="collapse" id="mood-extras">
+                {% capture mood %}{% include markdown/mood.markdown %}{% endcapture %} {{ mood | markdownify }}
+            </div>
+            <div class="project-button-extras">
+                <a class="btn btn-content show-more" data-toggle="collapse" href="#mood-extras">Show More</a>
+                <a class="btn btn-content" href="http://mood.marcelli.ca" target="_blank">Visit Mood</a>
+                <a class="btn btn-content" href="https://github.com/lucasmarcelli/mood-tracker" target="_blank">Github Repo</a>
+            </div>
+        </div>
+    </li>
     <li class="list-group-item">
         <div class="non-active-item">
             <div class="non-active-title">
