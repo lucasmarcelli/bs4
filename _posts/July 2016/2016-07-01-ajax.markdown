@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Using AJAX with Django"
+subtitle: "No more refreshes!"
+---
+I've been playing around with Django a lot lately, in preparation for a project at work. One thing that I wanted to address is that the pages always change when you insert things into the database. This is fine for a lot of applications, but if you have to show the same page after changing some data it will cause a refresh.
+
+The general solution to this problem, which plagues many a stack, is called [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)). Ajax is short for asynchronous javascript and XML, but nowadays you usually send a [JSON](https://en.wikipedia.org/wiki/JSON) string to the server instead.
+
+Integrating this into Django is actually pretty easy. The first thing you need is [this script](https://github.com/realpython/django-form-fun/blob/master/part1/main.js) included in your project. This is a simple request to your Django server asking for the cross site forgery request token, which is required to send data to your controller.
+
+Now that this is included, we need to have something to actually send an ajax request with. For the sake of this tutorial, I'm going to send the string "The quick brown fox jumps over the lazy dog" when we click a button on the index page. So the first thing we need is a button, which i'll add to the `index` template.
+
+
+{% highlight html %}
+<h3>Example AJAX</h3>
+<form method="POST" id="post-form">
+  {% raw %}{% csrf_token %}
+  {% endraw %}<input type="submit" id="example" value="AJAX request">
+</form>
+{% endhighlight %}
+
+Of particular importance here is the `csrf_token` tag. This will be replaced by the script we downloaded and django into the token required to send the data. It's also important you give your button an id. Now that we've done this, we can use some jquery to catch the button click, and send the string with ajax. Read the comments in the code for more info:
+
+{% highlight js %}
+$(function() {
+  $("#example").click( // Capture the button click
+    function () {
+    event.preventDefault(); // Skip reloading the window
+    var to_send = JSON.stringify("{'text': 'The quick brown fox jumps over the lazy dog.'}"); // What we will send to the server
+    send_json(to_send); // call the send function
+  });
+});
+{% endhighlight %}
+
+With the send function being:
+
+{% highlight js %}
+function send_json(json_string) {
+  $.ajax({
+    url : "get_data/", // the endpoint, where our data will go
+   type : "POST", // http method, POST sends data
+   data : { json_string : json_string }, // data sent with the post request
+
+      success : function(json) { // if we were successful
+          console.log(json); // log the returned json to the console, in this case the sent string
+          console.log("success"); // another sanity check
+      },
+
+      // handle a non-successful response
+      error : function(xhr,errmsg,err) {
+        console.log(xhr.status + ": " + xhr.responseText);
+      }
+  });
+};
+{% endhighlight %}
+
+If we click the button right now though, you'll get an error up in the console. This is for two reasons. Firstly, we haven't set up a view configured to handle the `POST`, and the second is that the `get_data/` route hasn't been configured in `urls.py`.
+
+Let's tackle the first problem. In `views.py`, let's say our button is being rendered by a class based view called `IndexView`. We're going to catch the `POST` request by overriding the post method in `IndexView`, and then returning the same string as a response like so:
+
+{% highlight python %}
+def post(self, request):
+      raw_json = request.POST.get('json-string')
+
+      return HttpResponse(json.dumps(raw_json), content_type="application/json")
+{% endhighlight %}
+
+and if the page is at the root URL, our `urls.py` will need to have this route added to it:
+
+{% highlight python %}
+url(r'^get_data/$', IndexView.as_view(), name='post-example'),
+{% endhighlight %}
+
+Now if we click the button, the console will log the response properly.
+
+This is all also available in a base django project I made [here](https://github.com/lucasmarcelli/django-ajax-allauth-bootstrap4-compressor-base) to make starting an app easier. The base project includes social media login, a staticfile compressor and some other stuff to make it really simple to start a django app. Check it out!
