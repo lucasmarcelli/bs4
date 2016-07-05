@@ -3,6 +3,9 @@ layout: post
 title: "Using AJAX with Django"
 subtitle: "No more refreshes!"
 ---
+
+<strong>Someone pointed out to me that the method I use in this tutorial (namely `response.POST.get`) is a security hole. I'll fix the hole and publish an updated blog post when it's done. No real ETA since I have work lolol.</strong>
+
 I've been playing around with Django a lot lately, in preparation for a project at work. One thing that I wanted to address is that the pages always change when you insert things into the database. This is fine for a lot of applications, but if you have to show the same page after changing some data it will cause a refresh.
 
 The general solution to this problem, which plagues many a stack, is called [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)). Ajax is short for asynchronous javascript and XML, but nowadays you usually send a [JSON](https://en.wikipedia.org/wiki/JSON) string to the server instead.
